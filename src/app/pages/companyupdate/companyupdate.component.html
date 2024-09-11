@@ -1,0 +1,173 @@
+<!-- 
+<h1 mat-dialog-title>Hello There</h1>
+<div mat-dialog-content>
+<p>This Is a Simple Dialog</p>
+</div>
+<div mat-dialog-actions>
+<button mat-button (click)="close()">Close</button>
+</div> -->
+<!-- <div class="card">
+  <div class="card-header">Enter your Details below
+  </div>
+  <div class="card-body">
+      <form  
+      #myform="ngForm" 
+      action=""
+      method="post"
+      enctype="multipart/form-data"
+      class="form-horizontal">
+
+      <div class="row feildstyle">
+       
+              <div class="col-md-3"> <label class="form-label"  for="firstname">Name</label></div>
+              <div class="col-md-9">
+                  <input    class="form-control" type="text" name="firstname" #firstname="ngModel" [(ngModel)]="userobj.firstname" minlength="3" required>
+                  <div class="text-danger" *ngIf="firstname.invalid && (firstname.touched || firstname.dirty)">
+                      <span *ngIf="firstname.errors?.['required']">required </span>
+                      <span *ngIf="firstname.errors?.['minlength']">3 required </span>   
+                  </div>
+              </div>
+
+ 
+         
+      </div>
+
+      <div class="row feildstyle" >
+          <div class="col-md-3"> <label class="form-label"  for="email">email</label></div>
+           <div class="col-md-9">
+               <input class="form-control" type="text" name="email" #email="ngModel" [(ngModel)]="userobj.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+               <div class="text-danger" *ngIf="email.invalid && (email.touched || email.dirty)">
+                   <span *ngIf="email.errors?.['required']">required </span>
+                   <span *ngIf="email.errors?.['pattern']">email is not proper</span>   
+               </div>
+           </div>
+
+       </div>
+
+       
+      <div class="row feildstyle" >
+          <div class="col-md-3"> <label class="form-label"  for="phonenumber">phonenumber</label></div>
+           <div class="col-md-9">
+               <input class="form-control" type="text" name="phonenumber" #phonenumber="ngModel" [(ngModel)]="userobj.phonenumber" minlength="10" required min="10">
+               <div class="text-danger" *ngIf="phonenumber.invalid && (phonenumber.touched || phonenumber.dirty)">
+                   <span *ngIf="phonenumber.errors?.['required']">required </span>
+                   <span *ngIf="phonenumber.errors?.['minlength']">10 required </span> 
+               </div>
+           </div>
+
+       </div>
+
+       <div class="row feildstyle" >
+          <div class="col-md-3"> <label class="form-label"  for="experience">total experience</label></div>
+           <div class="col-md-9">
+               <input class="form-control" type="text" name="experience" #experience="ngModel" [(ngModel)]="userobj.experience"  required>
+               <div class="text-danger" *ngIf="experience.invalid && (experience.touched || experience.dirty)">
+                   <span *ngIf="experience.errors?.['required']">required </span>
+                    
+               </div>
+           </div>
+
+       </div>  
+
+
+     
+
+
+              
+       <div class="row feildstyle">
+          <button type="button" class="btn btn-success" [disabled]="!myform.valid" (click)="onSubmit(userobj)" style="width: 158px;margin-left: 343px;">submit</button>
+
+       </div> -->
+      <!-- </form>
+
+      
+
+  </div>
+
+
+</div> --> 
+
+
+<div mat-dialog-title *ngIf="data">Company details</div>
+
+<form [formGroup]="updateForm" (ngSubmit)="onFormSubmit()"  *ngIf="data">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>name</mat-label>
+                <input matInput type="text" placeholder="name" formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>shortName</mat-label>
+                <input matInput placeholder="shortName" formControlName="shortName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>contactPersonName </mat-label>
+                <input matInput placeholder="contactPersonName" formControlName="contactPersonName">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+        
+            <mat-form-field appearance="outline">
+                <mat-label>emailId</mat-label>
+                <input matInput type="email" placeholder="emailId" formControlName="emailId">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>addressLine1</mat-label>
+                <input matInput placeholder="addressLine1" formControlName="addressLine1">
+            </mat-form-field>
+        </div>
+    
+
+        <div class="row">
+        
+            
+            <mat-form-field appearance="outline">
+                <mat-label>addressLine2</mat-label>
+                <input matInput placeholder="addressLine2" formControlName="addressLine2">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>zipCode</mat-label>
+                <input matInput placeholder="zipCode" formControlName="zipCode">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>phoneNo1</mat-label>
+                <input matInput placeholder="phoneNo1" formControlName="phoneNo1">
+            </mat-form-field>
+        </div>
+        <div class="row">
+        
+            
+          <mat-form-field appearance="outline">
+              <mat-label>phoneNo2</mat-label>
+              <input matInput placeholder="phoneNo2" formControlName="phoneNo2">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+              <mat-label>vatNo</mat-label>
+              <input matInput placeholder="vatNo" formControlName="vatNo">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+              <mat-label>crNo</mat-label>
+              <input matInput placeholder="crNo" formControlName="crNo">
+          </mat-form-field>
+      </div>
+
+           <div class="row">
+      
+
+          <mat-form-field appearance="outline">
+              <mat-label>currencyId</mat-label>
+              <input matInput placeholder="currencyId" formControlName="currencyId">
+          </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>

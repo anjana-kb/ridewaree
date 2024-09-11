@@ -1,0 +1,21 @@
+.feildstyle{
+    margin-top: 30px;
+}
+
+/* Ensure the dialog container is on top */
+.mat-dialog-container {
+    z-index: 1050; /* Ensure dialog is on top */
+  }
+  
+  /* Ensure the backdrop is below the dialog */
+  .mat-dialog-backdrop {
+    z-index: 1040; /* Ensure backdrop is below the dialog but above other content */
+  }
+  
+  /* Optional: Darker backdrop styling */
+  .dark-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .feildstyle{
+    margin-top: 30px;
+}

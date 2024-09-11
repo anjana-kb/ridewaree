@@ -1,0 +1,204 @@
+<button mat-button [mat-dialog-close]="true" (click)="close()" class="btn btn-sm  pull-left mx-2">Close</button>
+
+
+<div mat-dialog-title  *ngIf="!data">Add Employee</div>
+
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()"  *ngIf="!data">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>First name</mat-label>
+                <input matInput type="text" placeholder="firstName" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="lastName" formControlName="lastName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>middleName </mat-label>
+                <input matInput placeholder="middleName" formControlName="middleName">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            
+            <mat-form-field appearance="outline">
+                <mat-label>birthDate</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+        </div>
+
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-label><b>Gender</b></mat-label>
+                <mat-radio-button value=0>Male</mat-radio-button>
+                <mat-radio-button value=1>Female</mat-radio-button>
+                <mat-radio-button value=2>Others</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div class="row">
+        
+            <mat-form-field appearance="outline">
+                <mat-label>parmenantAddress</mat-label>
+                <input matInput placeholder="parmenantAddress" formControlName="parmenantAddress">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>currentAddress</mat-label>
+                <input matInput placeholder="currentAddress" formControlName="currentAddress">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <!-- <mat-form-field appearance="outline">
+                <mat-label>isCurrentSameAsParmenantAddress</mat-label>
+                <input  type="checkbox" formControlName="isCurrentSameAsParmenantAddress">
+            </mat-form-field> -->
+            <mat-radio-group aria-label="Select an option" formControlName="isCurrentSameAsParmenantAddress">
+                <mat-label><b>isCurrentSameAsParmenantAddress</b></mat-label>
+                <mat-radio-button value="1">yes</mat-radio-button>
+                <mat-radio-button value="0">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-form-field appearance="outline">
+                <mat-label>personalEmailId</mat-label>
+                <input matInput type="email" placeholder="personalEmailId" formControlName="personalEmailId">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>personalMobileNo</mat-label>
+                <input matInput type="text" placeholder="personalMobileNo" formControlName="personalMobileNo">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>otherContactNo</mat-label>
+                <input matInput type="text" placeholder="otherContactNo" formControlName="otherContactNo">
+            </mat-form-field>
+                
+          
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>employeeCode</mat-label>
+                <input matInput type="text" placeholder="employeeCode" formControlName="employeeCode">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            
+            <mat-form-field appearance="outline">
+                <mat-label>joiningOn</mat-label>
+                <input matInput [matDatepicker]="joiningOn" formControlName="joiningOn">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="joiningOn"></mat-datepicker-toggle>
+                <mat-datepicker #joiningOn></mat-datepicker>
+            </mat-form-field>
+
+        </div>
+    
+        
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>
+
+
+<!-- updation -->
+
+
+
+<div mat-dialog-title *ngIf="data">Update Employee</div>
+
+<form [formGroup]="updateForm" (ngSubmit)="onFormSubmit()"  *ngIf="data">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>First name</mat-label>
+                <input matInput type="text" placeholder="firstName" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="lastName" formControlName="lastName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>middleName </mat-label>
+                <input matInput placeholder="middleName" formControlName="middleName">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+        
+            <mat-form-field appearance="outline">
+                <mat-label>officeEmailId</mat-label>
+                <input matInput type="email" placeholder="officeEmailId" formControlName="officeEmailId">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>officeContactNo</mat-label>
+                <input matInput placeholder="officeContactNo" formControlName="officeContactNo">
+            </mat-form-field>
+        </div>
+    
+
+        <div class="row">
+<mat-form-field appearance="outline">
+                <mat-label>joiningOn</mat-label>
+                <input matInput [matDatepicker]="joiningOn" formControlName="joiningOn">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="joiningOn"></mat-datepicker-toggle>
+                <mat-datepicker #joiningOn></mat-datepicker>
+            </mat-form-field> 
+
+            <mat-form-field appearance="outline">
+                <mat-label>relievingOn</mat-label>
+                <input matInput [matDatepicker]="relievingOn" formControlName="relievingOn">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="relievingOn"></mat-datepicker-toggle>
+                <mat-datepicker #relievingOn></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>confirmationOn</mat-label>
+                <input matInput [matDatepicker]="confirmationOn" formControlName="confirmationOn">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="confirmationOn"></mat-datepicker-toggle>
+                <mat-datepicker #confirmationOn></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>resignationOn</mat-label>
+                <input matInput [matDatepicker]="resignationOn" formControlName="resignationOn">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="resignationOn"></mat-datepicker-toggle>
+                <mat-datepicker #resignationOn></mat-datepicker>
+            </mat-form-field>
+
+        </div> 
+        <div class="row">
+        
+            
+            <mat-form-field appearance="outline">
+                <mat-label>designationId</mat-label>
+                <input matInput placeholder="designationId" formControlName="designationId">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>reportingToId</mat-label>
+                <input matInput placeholder="reportingToId" formControlName="reportingToId">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>departmentId</mat-label>
+                <input matInput placeholder="departmentId" formControlName="departmentId">
+            </mat-form-field>
+        </div>
+        
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>

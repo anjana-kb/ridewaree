@@ -1,0 +1,56 @@
+<div class="responsive-container-block bigContainer">
+    <div class="responsive-container-block Container bottomContainer">
+      <div class="ultimateImg">
+        <img class="mainImg" src="https://www.ridewaretech.com/img/abt-pic-01.jpg" style="margin-top: -14px;height: 303px;width: 473px;">
+        <div class="purpleBox">
+          <p class="purpleText">
+            We at RideWare provides state of the art simplified & customized software solutions for clients with complex business operations.          </p>
+          <img class="stars" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/mp5.svg">
+        </div>
+      </div>
+      <div class="allText bottomText">
+        <p class="text-blk headingText">
+          About Us
+        </p>
+      
+        <p class="text-blk description">
+          RIDEWARE TECHNOLOGIES EST. is a leading IT software development company that offers cutting-edge solutions to businesses across diverse industry verticals. With a team of highly skilled software developers, we specialize in business process automation and developing customized software applications that help our clients achieve their business objectives.        </p>
+      <div>
+
+      </div>
+
+      <div class="row">
+        <div class="card">
+          <div class="card-body" style="width: 310px;">
+            <div class="text-center">
+              <img class="img1" style="height: 96px;" [src]="getLogoUrl(company.logo)" alt="Company Logo" class="img-fluid" />
+            </div>
+            <h1 class="card-title text-primary">{{ company.shortName }}</h1>
+            <p><strong>Address Line 1:</strong> {{ company.addressLine1 }}</p>
+            <p><strong>Address Line 2:</strong> {{ company.addressLine2 }}</p>
+            <p><strong>Zip Code:</strong> {{ company.zipCode }}</p>
+            <p><strong>Email:</strong> <a href="mailto:{{ company.emailId }}" class="text-info">{{ company.emailId }}</a></p>
+            <p><strong>Phone 1:</strong> {{ company.phoneNo1 }}</p>
+            <p><strong>Phone 2:</strong> {{ company.phoneNo2 }}</p>
+            <p><strong>VAT Number:</strong> {{ company.vatNo }}</p>
+            <p><strong>CR Number:</strong> {{ company.crNo }}</p>
+         
+          </div>
+          <div>
+            <button
+            mat-raised-button
+            (click)="update()"
+            class="btn btn-primary"
+            style="margin-left: 24px;margin-bottom: 50px;"
+          >
+            edit details
+          </button>
+          </div>
+        </div>
+      </div>
+          
+      
+      </div>
+    </div>
+  </div>
+

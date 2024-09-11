@@ -1,0 +1,108 @@
+/* navbar.component.css */
+.navbar {
+    background-color: #302b63; /* Blue background color */
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    z-index: 1000; /* Ensure navbar is above other content */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle .bar {
+    width: 30px; /* Slightly wider bars */
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .nav-links a:hover {
+    color: #FFDDC1; /* Light peach color on hover */
+  }
+  
+  @media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .logo {
+      margin-bottom: 10px;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px; /* Adjust according to the height of the navbar */
+      left: 0;
+      background-color: #302b63; /* Same color as the navbar */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for mobile menu */
+      padding: 20px;
+      margin: 0;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+      text-align: center;
+    }
+  
+    .nav-links a {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-links a {
+      font-size: 16px; /* Smaller font size for very small screens */
+    }
+  }
+  

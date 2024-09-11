@@ -1,0 +1,60 @@
+/* home.component.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background:url('/assets/techimage.jpg') no-repeat center center;
+    background-size: cover; /* Cover the entire section */
+    /* filter: opacity(0.4); */
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent background for text readability */
+    border-radius: 8px; /* Optional: rounded corners for the text container */
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem; /* Adjust size for larger screens */
+    margin: 0;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem; /* Adjust size for larger screens */
+    margin: 10px 0 0;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem; /* Smaller text on smaller screens */
+    }
+  
+    .hero-content p {
+      font-size: 1.2rem; /* Smaller text on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 1.8rem; /* Even smaller text for very small screens */
+    }
+  
+    .hero-content p {
+      font-size: 1rem; /* Even smaller text for very small screens */
+    }
+  }
+  
